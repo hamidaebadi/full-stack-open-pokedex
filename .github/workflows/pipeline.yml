@@ -59,11 +59,11 @@ jobs:
       - name: Successful Deployment
         uses: rjstone/discord-webhook-notify@v1
         if: ${{ success() }}
-          with:
-            severity: info
-            description: new deployment
-            details: A new version of Pokedex deployed to !
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          severity: info
+          description: new deployment
+          details: A new version of Pokedex deployed to !
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
   tag_release:
     needs: [simple_deployment_pipeline]
